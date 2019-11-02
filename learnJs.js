@@ -40,3 +40,21 @@ const user = {
 console.log(user.isBoss()); // Юзер стал Боссом ))
 console.log(user.boss);
 
+// -------------------------------- Object.setPrototypeOf method
+
+function Manager (name, age) {
+   this.name = name;
+   this.age = age;
+   this.walk = function() {
+     return `${this.name} can walk`
+   }
+}
+const manager = new Manager("Tima", "unknow ;-)")
+
+const user = {
+  name: "Dan",
+  age: 33,
+}
+
+Object.setPrototypeOf(user, manager)
+console.log(user.walk())
