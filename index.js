@@ -17,6 +17,7 @@ class Manager {
 }
 
 Manager.prototype.walk = function() {
+  // Добавили метод walk() в Manager.prototype
   return "He can walk!";
 };
 
@@ -65,7 +66,13 @@ Manager.prototype.walk = function() {
       }
     }
   }
+}
 
-  console.log(user.walk());
-  console.log(manager.walk());
+// ---------------------------------------------------------
+
+{
+  // Метод примесей
+  const user = new User("Ivan");
+  const manager = new Manager("Admin");
+  Object.assign(user.__proto__, manager.__proto__);
 }
